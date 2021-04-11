@@ -16,7 +16,7 @@ use Psr\Http\Message\StreamInterface;
 final class EasyHandle
 {
     /**
-     * @var resource|\CurlHandle cURL resource
+     * @var resource cURL resource
      */
     public $handle;
 
@@ -56,11 +56,6 @@ final class EasyHandle
     public $onHeadersException;
 
     /**
-     * @var \Exception|null Exception during createResponse (if any)
-     */
-    public $createResponseException;
-
-    /**
      * Attach a response to the easy handle based on the received headers.
      *
      * @throws \RuntimeException if no headers have been received.
@@ -76,11 +71,15 @@ final class EasyHandle
         $headers = Utils::headersFromLines($this->headers);
         $normalizedKeys = Utils::normalizeHeaderKeys($headers);
 
-        if (!empty($this->options['decode_content']) && isset($normalizedKeys['content-encoding'])) {
-            $headers['x-encoded-content-encoding'] = $headers[$normalizedKeys['content-encoding']];
+        if (!empty($this->options['decode_content'])
+            && isset($normalizedKeys['content-encoding'])
+        ) {
+            $headers['x-encoded-content-encoding']
+                = $headers[$normalizedKeys['content-encoding']];
             unset($headers[$normalizedKeys['content-encoding']]);
             if (isset($normalizedKeys['content-length'])) {
-                $headers['x-encoded-content-length'] = $headers[$normalizedKeys['content-length']];
+                $headers['x-encoded-content-length']
+                    = $headers[$normalizedKeys['content-length']];
 
                 $bodyLength = (int) $this->sink->getSize();
                 if ($bodyLength) {
@@ -112,7 +111,9 @@ final class EasyHandle
      */
     public function __get($name)
     {
-        $msg = $name === 'handle' ? 'The EasyHandle has been released' : 'Invalid property: ' . $name;
+        $msg = $name === 'handle'
+            ? 'The EasyHandle has been released'
+            : 'Invalid property: ' . $name;
         throw new \BadMethodCallException($msg);
     }
 }

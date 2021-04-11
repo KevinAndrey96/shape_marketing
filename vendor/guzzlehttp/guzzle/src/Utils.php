@@ -49,7 +49,9 @@ final class Utils
 
         foreach ($lines as $line) {
             $parts = \explode(':', $line, 2);
-            $headers[\trim($parts[0])][] = isset($parts[1]) ? \trim($parts[1]) : null;
+            $headers[\trim($parts[0])][] = isset($parts[1])
+                ? \trim($parts[1])
+                : null;
         }
 
         return $headers;
@@ -104,7 +106,8 @@ final class Utils
                 ? Proxy::wrapStreaming($handler, new StreamHandler())
                 : new StreamHandler();
         } elseif (!$handler) {
-            throw new \RuntimeException('GuzzleHttp requires cURL, the allow_url_fopen ini setting, or a custom HTTP handler.');
+            throw new \RuntimeException('GuzzleHttp requires cURL, the '
+                . 'allow_url_fopen ini setting, or a custom HTTP handler.');
         }
 
         return $handler;
@@ -130,8 +133,6 @@ final class Utils
      * Note: the result of this function is cached for subsequent calls.
      *
      * @throws \RuntimeException if no bundle can be found.
-     *
-     * @deprecated Utils::defaultCaBundle will be removed in guzzlehttp/guzzle:8.0. This method is not needed in PHP 5.6+.
      */
     public static function defaultCaBundle(): string
     {
@@ -277,7 +278,9 @@ EOT
     {
         $data = \json_decode($json, $assoc, $depth, $options);
         if (\JSON_ERROR_NONE !== \json_last_error()) {
-            throw new InvalidArgumentException('json_decode error: ' . \json_last_error_msg());
+            throw new InvalidArgumentException(
+                'json_decode error: ' . \json_last_error_msg()
+            );
         }
 
         return $data;
@@ -298,7 +301,9 @@ EOT
     {
         $json = \json_encode($value, $options, $depth);
         if (\JSON_ERROR_NONE !== \json_last_error()) {
-            throw new InvalidArgumentException('json_encode error: ' . \json_last_error_msg());
+            throw new InvalidArgumentException(
+                'json_encode error: ' . \json_last_error_msg()
+            );
         }
 
         /** @var string */

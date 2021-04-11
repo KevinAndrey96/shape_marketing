@@ -1119,33 +1119,34 @@
     },
     {
         "name": "guzzlehttp/guzzle",
-        "version": "7.2.0",
-        "version_normalized": "7.2.0.0",
+        "version": "7.0.0",
+        "version_normalized": "7.0.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79"
+            "reference": "414c24961042f6616fb43e23fa69a785f9fc053e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0aa74dfb41ae110835923ef10a9d803a22d50e79",
-            "reference": "0aa74dfb41ae110835923ef10a9d803a22d50e79",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/414c24961042f6616fb43e23fa69a785f9fc053e",
+            "reference": "414c24961042f6616fb43e23fa69a785f9fc053e",
             "shasum": ""
         },
         "require": {
             "ext-json": "*",
-            "guzzlehttp/promises": "^1.4",
-            "guzzlehttp/psr7": "^1.7",
-            "php": "^7.2.5 || ^8.0",
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.6.1",
+            "php": "^7.2.5",
             "psr/http-client": "^1.0"
         },
         "provide": {
             "psr/http-client-implementation": "1.0"
         },
         "require-dev": {
+            "ergebnis/composer-normalize": "^2.0",
             "ext-curl": "*",
-            "php-http/client-integration-tests": "^3.0",
-            "phpunit/phpunit": "^8.5.5 || ^9.3.5",
+            "php-http/client-integration-tests": "dev-phpunit8",
+            "phpunit/phpunit": "^8.5.5",
             "psr/log": "^1.1"
         },
         "suggest": {
@@ -1153,11 +1154,11 @@
             "ext-intl": "Required for Internationalized Domain Name (IDN) support",
             "psr/log": "Required for using the Log middleware"
         },
-        "time": "2020-10-10T11:47:56+00:00",
+        "time": "2020-06-27T08:47:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "7.1-dev"
+                "dev-master": "7.0-dev"
             }
         },
         "installation-source": "dist",
@@ -1197,24 +1198,6 @@
             "psr-7",
             "rest",
             "web service"
-        ],
-        "funding": [
-            {
-                "url": "https://github.com/GrahamCampbell",
-                "type": "github"
-            },
-            {
-                "url": "https://github.com/Nyholm",
-                "type": "github"
-            },
-            {
-                "url": "https://github.com/alexeyshockov",
-                "type": "github"
-            },
-            {
-                "url": "https://github.com/gmponos",
-                "type": "github"
-            }
         ]
     },
     {
@@ -1690,6 +1673,68 @@
         ]
     },
     {
+        "name": "laravel/sanctum",
+        "version": "v2.9.4",
+        "version_normalized": "2.9.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/sanctum.git",
+            "reference": "dd84a9141012c5509922df0c72866110f45026cb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/sanctum/zipball/dd84a9141012c5509922df0c72866110f45026cb",
+            "reference": "dd84a9141012c5509922df0c72866110f45026cb",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "illuminate/contracts": "^6.9|^7.0|^8.0",
+            "illuminate/database": "^6.9|^7.0|^8.0",
+            "illuminate/support": "^6.9|^7.0|^8.0",
+            "php": "^7.2|^8.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "^1.0",
+            "orchestra/testbench": "^4.0|^5.0|^6.0",
+            "phpunit/phpunit": "^8.0|^9.3"
+        },
+        "time": "2021-04-06T14:32:48+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Laravel\\Sanctum\\SanctumServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravel\\Sanctum\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
+        "keywords": [
+            "auth",
+            "laravel",
+            "sanctum"
+        ]
+    },
+    {
         "name": "laravel/tinker",
         "version": "v2.5.0",
         "version_normalized": "2.5.0.0",
@@ -1753,6 +1798,62 @@
             "Tinker",
             "laravel",
             "psysh"
+        ]
+    },
+    {
+        "name": "laravel/ui",
+        "version": "v3.2.0",
+        "version_normalized": "3.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/ui.git",
+            "reference": "a1f82c6283c8373ea1958b8a27c3d5c98cade351"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/ui/zipball/a1f82c6283c8373ea1958b8a27c3d5c98cade351",
+            "reference": "a1f82c6283c8373ea1958b8a27c3d5c98cade351",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "^8.0",
+            "illuminate/filesystem": "^8.0",
+            "illuminate/support": "^8.0",
+            "php": "^7.3|^8.0"
+        },
+        "time": "2021-01-06T19:20:22+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Laravel\\Ui\\UiServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravel\\Ui\\": "src/",
+                "Illuminate\\Foundation\\Auth\\": "auth-backend/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "Laravel UI utilities and presets.",
+        "keywords": [
+            "laravel",
+            "ui"
         ]
     },
     {
@@ -7976,12 +8077,12 @@
         "version_normalized": "1.9.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/webmozart/assert.git",
+            "url": "https://github.com/webmozarts/assert.git",
             "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+            "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
             "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
             "shasum": ""
         },
